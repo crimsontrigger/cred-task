@@ -69,17 +69,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (f2uncollapsedView.getVisibility() == View.VISIBLE) {
-                    Transition transition = new Slide(Gravity.BOTTOM);
-                    transition.setDuration(400);
-                    transition.addTarget(R.id.uncollapsedview_second);
-                    TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-                    f2uncollapsedView.setVisibility(View.GONE);
+                    alterfrag2(f2uncollapsedView, View.GONE);
                 } else {
-                    Transition transition = new Slide(Gravity.BOTTOM);
-                    transition.setDuration(400);
-                    transition.addTarget(R.id.uncollapsedview_third);
-                    TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-                    f3uncollapsedView.setVisibility(View.GONE);
+                    alterfrag3(f3uncollapsedView,View.GONE);
                     f2collapsedView.setVisibility(View.GONE);
                 }
                 f1collapsedView.setVisibility(View.GONE);
@@ -91,11 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Transition transition = new Slide(Gravity.BOTTOM);
-                transition.setDuration(400);
-                transition.addTarget(R.id.uncollapsedview_third);
-                TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-                f3uncollapsedView.setVisibility(View.GONE);
+                alterfrag3(f3uncollapsedView,View.GONE);
                 f2collapsedView.setVisibility(View.GONE);
                 f2uncollapsedView.setVisibility(View.VISIBLE);
             }
@@ -107,26 +95,34 @@ public class MainActivity extends AppCompatActivity {
 
                 if (f1uncollapsedView.getVisibility() == View.VISIBLE) {
                     f1collapsedView.setVisibility(View.VISIBLE);
-                    Transition transition = new Slide(Gravity.BOTTOM);
-                    transition.setDuration(400);
-                    transition.addTarget(R.id.uncollapsedview_second);
-                    TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-                    f2uncollapsedView.setVisibility(View.VISIBLE);
+                    alterfrag2(f2uncollapsedView, View.VISIBLE);
                     mainButton.setText(R.string.select_your_bank);
                     f1uncollapsedView.setVisibility(View.GONE);
 
                 } else if (f2uncollapsedView.getVisibility() == View.VISIBLE) {
                     f2collapsedView.setVisibility(View.VISIBLE);
-                    Transition transition = new Slide(Gravity.BOTTOM);
-                    transition.setDuration(400);
-                    transition.addTarget(R.id.uncollapsedview_third);
-                    TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-                    f3uncollapsedView.setVisibility(View.VISIBLE);
+                    alterfrag3(f3uncollapsedView,View.VISIBLE);
                     mainButton.setText(R.string.one_click_kyc);
                     f2uncollapsedView.setVisibility(View.GONE);
                 }
             }
         });
+    }
+
+    private void alterfrag2(View v, int state_value) {
+        Transition transition = new Slide(Gravity.BOTTOM);
+        transition.setDuration(400);
+        transition.addTarget(R.id.uncollapsedview_second);
+        TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
+        v.setVisibility(state_value);
+    }
+
+    private void alterfrag3(View v, int state_value) {
+        Transition transition = new Slide(Gravity.BOTTOM);
+        transition.setDuration(400);
+        transition.addTarget(R.id.uncollapsedview_third);
+        TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
+        v.setVisibility(state_value);
     }
 
     @Override
@@ -140,20 +136,12 @@ public class MainActivity extends AppCompatActivity {
         Button mainButton = (Button) findViewById(R.id.button_first);
 
         if (f2uncollapsedView.getVisibility() == View.VISIBLE) {
-            Transition transition = new Slide(Gravity.BOTTOM);
-            transition.setDuration(400);
-            transition.addTarget(R.id.uncollapsedview_second);
-            TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-            f2uncollapsedView.setVisibility(View.GONE);
+            alterfrag2(f2uncollapsedView, View.GONE);
             f1collapsedView.setVisibility(View.GONE);
             f1uncollapsedView.setVisibility(View.VISIBLE);
             mainButton.setText(R.string.next);
         } else if (f3uncollapsedView.getVisibility() == View.VISIBLE) {
-            Transition transition = new Slide(Gravity.BOTTOM);
-            transition.setDuration(400);
-            transition.addTarget(R.id.uncollapsedview_third);
-            TransitionManager.beginDelayedTransition(findViewById(R.id.nav_host_fragment), transition);
-            f3uncollapsedView.setVisibility(View.GONE);
+            alterfrag3(f3uncollapsedView,View.GONE);
             f2collapsedView.setVisibility(View.GONE);
             f2uncollapsedView.setVisibility(View.VISIBLE);
             mainButton.setText(R.string.select_your_bank);
