@@ -305,7 +305,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:text="Plan 1"
+                    android:text="Bank 1"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -336,7 +336,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:text="Plan 2"
+                    android:text="Bank 2"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
