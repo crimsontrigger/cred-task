@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">test</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Proceed to EMI selection</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">nikunj, how much do you need?</string>
+    <string name="desc_first_fragment">move the dial and set any amount you need</string>
+    <string name="hello_second_fragment">how do you wish to repay?</string>
+    <string name="desc_second_fragment">choose one of our recommended plans or make your own</string>
+    <string name="hello_third_fragment">where should we send this money?</string>
+    <string name="desc_third_fragment">amount will be credited to this bank account. EMI will also be debited from this bank account</string>
+    <string name="select_your_bank">Select your bank account</string>
+    <string name="one_click_kyc">Tap for 1-click KYC</string>
+</resources>
